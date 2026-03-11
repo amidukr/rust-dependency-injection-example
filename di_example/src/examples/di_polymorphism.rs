@@ -1,4 +1,3 @@
-
 use combine_structs::{Fields, combine_fields};
 use di_macro::{ContextExtension, FieldEnumerator};
 use paste::paste;
@@ -382,11 +381,27 @@ fn do_run<T: Initializable<T> + Default + UseConfiguration + ControllerContext>(
     ctx.write_controller().do_something(&ctx, "argument");
 }
 
+// Example Output
+//
+// Running Profile1
+// Configuration = DB_URL=127.0.0.1:5555
+// PostgresDB connection init sequence = DB_URL=127.0.0.1:5555
+// Reading from Postgres DB on DB_URL=127.0.0.1:5555: SELECT * FROM table WHERE id = 'argument'
+// Writing into Postgres DB on DB_URL=127.0.0.1:5555: UPDATE table SET value = 'new' WHERE id = 'argument'
+// WriteController 'argument' sent to RabbitMq
+// WriteController 'argument' sent to Kafka
+
+// Running Profile2
+// Configuration = DB_URL=127.0.0.1:5555
+// Reading from Oracle DB: SELECT * FROM table WHERE id = 'argument'
+// Writing into Oracle DB UPDATE table SET value = 'new' WHERE id = 'argument'
+// WriteController 'argument' sent to RabbitMq
+
 pub fn run() {
     println!("Running Profile1");
     do_run::<ApplicationProfile1>();
     println!();
 
-    println!("Running PrVofile2");
+    println!("Running Profile2");
     do_run::<ApplicationProfile2>();
 }

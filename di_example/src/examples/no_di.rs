@@ -1,6 +1,5 @@
 // lib DB interface
 
-
 trait DatabaseConnection {
     fn read_query(&self, query: &str);
     fn write_query(&self, query: &str);
@@ -93,6 +92,11 @@ const _: () = {
     const fn assert_send_sync<T: Send + Sync>() {}
     assert_send_sync::<ApplicationContext>();
 };
+
+// Example Output
+//
+// Reading from Postgres DB: SELECT * FROM table WHERE id = 'argument'
+// Writing into Postgres DB: UPDATE table SET value = 'new' WHERE id = 'argument'
 
 pub fn run() {
     let ctx = ApplicationContext::default();

@@ -201,6 +201,12 @@ const _: () = {
     assert_send_sync::<ApplicationContext>();
 };
 
+// Example Output
+//
+// Init sequence = DB_URL=127.0.0.1:5555
+// Reading from Postgres DB on DB_URL=127.0.0.1:5555: SELECT * FROM table WHERE id = 'argument'
+// Writing into Postgres DB on DB_URL=127.0.0.1:5555: UPDATE table SET value = 'new' WHERE id = 'argument'
+
 pub fn run() {
     let mut ctx = ApplicationContext::default();
 

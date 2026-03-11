@@ -116,6 +116,11 @@ const _: () = {
     assert_send_sync::<ApplicationContext>();
 };
 
+// Example Output
+//
+// Reading from Postgres DB: SELECT * FROM table WHERE id = 'argument'
+// Writing into Postgres DB: UPDATE table SET value = 'new' WHERE id = 'argument'
+
 pub fn run() {
     let ctx = ApplicationContext::default();
 

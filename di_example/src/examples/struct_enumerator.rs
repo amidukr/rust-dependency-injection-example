@@ -24,9 +24,17 @@ macro_rules! my_callback {
     };
 }
 
+// Example Output
+//
+// my_struct = MyStruct { field_1: 0, field_1_2: 0, field_2: 0, field_3: 0 }
+// struct = MyStruct, field = field_1, type = init_listener
+// struct = MyStruct, field = field_1_2, type = init_listener
+// struct = MyStruct, field = field_1_2, type = start_listener
+// struct = MyStruct, field = field_3, type = start_listener
+
 pub fn run() {
-    let s = MyStruct::default();
-    println!("S = {:?}", s);
+    let my_struct = MyStruct::default();
+    println!("my_struct = {:?}", my_struct);
 
     enumerate_tags_MyStruct_init_listener!(my_callback);
     enumerate_tags_MyStruct_start_listener!(my_callback);

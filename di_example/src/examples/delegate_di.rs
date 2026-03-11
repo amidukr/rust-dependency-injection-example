@@ -141,6 +141,12 @@ const _: () = {
     assert_send_sync::<ApplicationContext>();
 };
 
+// Example Output
+//
+// Settings = database=host:5555
+// Read SELECT x FROM table from Connection to database=host:5555
+// Write UPDATE table SET x =1 into Connection to database=host:5555
+
 pub fn run() {
     let mut ctx = ApplicationContext::default();
     ctx.configuration_mut()
