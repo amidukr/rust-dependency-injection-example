@@ -1,0 +1,9 @@
+[package]
+name = "rust_di_example"
+version = "0.10.0"
+edition = "2024"
+[dependencies]
+ambassador = "0"
+combine-structs = "0"
+paste="1"
+di_macro = { path = "../di_macro" }
