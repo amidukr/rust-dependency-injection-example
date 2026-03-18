@@ -73,4 +73,4 @@ cargo run
 
 A detailed explanation and motivation will be provided in an accompanying Medium article.
 
-(Medium article link placeholder — to be added when ready)
+https://medium.com/@amid.ukr/can-rust-have-zero-cost-dependency-injection-fc0c9ae6abd3
